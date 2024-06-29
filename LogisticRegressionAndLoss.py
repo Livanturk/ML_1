@@ -16,3 +16,5 @@ plt.show()
 plt.close("all")
 plt_logistic_squared_error(x_train, y_train)
 plt.show()
+
+plt_two_logistic_loss_curves()
