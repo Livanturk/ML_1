@@ -35,7 +35,7 @@ def plt_roast(X,Y):
     fig, ax = plt.subplots(1,1,)
     ax.scatter(X[Y==1,0],X[Y==1,1], s=70, marker='x', c='red', label="Good Roast" )
     ax.scatter(X[Y==0,0],X[Y==0,1], s=100, marker='o', facecolors='none', 
-               edgecolors=dlc["dldarkblue"],linewidth=1,  label="Bad Roast")
+               edgecolors=dlc["dlblue"],linewidth=1,  label="Bad Roast")
     tr = np.linspace(175,260,50)
     ax.plot(tr, (-3/85) * tr + 21, color=dlc["dlpurple"],linewidth=1)
     ax.axhline(y=12,color=dlc["dlpurple"],linewidth=1)
@@ -83,7 +83,7 @@ def plt_layer(X,Y,W1,b1,norm_l):
         plt_prob(ax[i], layerf)
         ax[i].scatter(X[Y==1,0],X[Y==1,1], s=70, marker='x', c='red', label="Good Roast" )
         ax[i].scatter(X[Y==0,0],X[Y==0,1], s=100, marker='o', facecolors='none', 
-                   edgecolors=dlc["dldarkblue"],linewidth=1,  label="Bad Roast")
+                   edgecolors=dlc["dlblue"],linewidth=1,  label="Bad Roast")
         tr = np.linspace(175,260,50)
         ax[i].plot(tr, (-3/85) * tr + 21, color=dlc["dlpurple"],linewidth=2)
         ax[i].axhline(y= 12, color=dlc["dlpurple"], linewidth=2)
@@ -99,7 +99,7 @@ def plt_network(X,Y,netf):
     plt_prob(ax[0], netf)
     ax[0].scatter(X[Y==1,0],X[Y==1,1], s=70, marker='x', c='red', label="Good Roast" )
     ax[0].scatter(X[Y==0,0],X[Y==0,1], s=100, marker='o', facecolors='none', 
-                   edgecolors=dlc["dldarkblue"],linewidth=1,  label="Bad Roast")
+                   edgecolors=dlc["dlblue"],linewidth=1,  label="Bad Roast")
     ax[0].plot(X[:,0], (-3/85) * X[:,0] + 21, color=dlc["dlpurple"],linewidth=1)
     ax[0].axhline(y= 12, color=dlc["dlpurple"], linewidth=1)
     ax[0].axvline(x=175, color=dlc["dlpurple"], linewidth=1)
@@ -115,7 +115,7 @@ def plt_network(X,Y,netf):
     yhat = (fwb > 0.5).astype(int)
     ax[1].scatter(X[yhat[:,0]==1,0],X[yhat[:,0]==1,1], s=70, marker='x', c='orange', label="Predicted Good Roast" )
     ax[1].scatter(X[yhat[:,0]==0,0],X[yhat[:,0]==0,1], s=100, marker='o', facecolors='none', 
-                   edgecolors=dlc["dldarkblue"],linewidth=1,  label="Predicted Bad Roast")
+                   edgecolors=dlc["dlblue"],linewidth=1,  label="Predicted Bad Roast")
     ax[1].set_title(f"network decision")
     ax[1].set_xlabel("Temperature \n(Celsius)",size=12)
     ax[1].set_ylabel("Duration \n(minutes)",size=12)
